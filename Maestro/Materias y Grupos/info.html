@@ -1,0 +1,128 @@
+
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IECI Administración</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .rounded-box {
+            border-radius: 9999px;
+        }
+        .group-box {
+            border: 2px solid #ffffff; /* Tailwind's blue-700 */
+            border-radius: 0.5rem; /* Tailwind's rounded-md */
+            background-color: #f3f4f6; /* Tailwind's gray-100 */
+        }
+        .hover\:bg-navy:hover {
+            background-color: #000080; /* Navy color */
+        }
+        .nav-button {
+            padding: 2px 16px;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem; /* Tailwind's text-sm */
+            font-weight: normal;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+        .nav-button.active {
+            background-color: #000080; /* Navy color */
+        }
+        .rounded-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background-color: #ccc; /* Default color */
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .rounded-btn:hover {
+            background-color: #1e40af; /* Blue color on hover */
+        }
+    </style>
+</head>
+<body class="bg-gray-200">
+    <div class="flex flex-col h-screen">
+        <!-- Top Bar -->
+        <div class="flex items-center justify-between bg-white p-2 text-gray-800 shadow-md">
+            <h1 class="text-lg font-semibold">IECI</h1>
+            <button id="menu-toggle" class="text-gray-600">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex flex-1 overflow-hidden">
+            <!-- Sidebar -->
+            <div id="sidebar" class="w-48 bg-blue-700 text-white flex flex-col justify-between transform translate-x-0 transition-transform duration-300">
+                <div class="p-3">
+                    <a href="Materias.html" class="rounded-box bg-yellow-500 nav-button hover:bg-navy cursor-pointer">Alumnado</a>
+                    <a href="/Administracion/Summer-camp/#" class="rounded-box bg-yellow-500 nav-button hover:bg-navy cursor-pointer">SUMMER-CAMP</a>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+                <div class="flex-1 p-8">
+                    <div class="group-box mb-6">
+                        <h3 class="text-lg font-semibold p-4">Grupo A - Lista de Alumnos</h3>
+                        <div class="p-4">
+                            <!-- Table for Alumnos -->
+                            <table class="min-w-full">
+                                <thead>
+                                    <tr>
+                                        <th class="px-4 py-2 text-left text-gray-800">Nombre</th>
+                                        <th class="px-4 py-2 text-left text-gray-800">Matrícula</th>
+                                        <th class="px-4 py-2 text-left text-gray-800">Calificación</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Repeat for each student -->
+                                    <tr>
+                                        <td class="border px-4 py-2 text-gray-800">Juan Pérez</td>
+                                        <td class="border px-4 py-2 text-gray-800">A001</td>
+                                        <td class="border px-4 py-2">
+                                            <input type="text" class="rounded-md border-gray-300" value="8.5">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border px-4 py-2 text-gray-800">Ana López</td>
+                                        <td class="border px-4 py-2 text-gray-800">A002</td>
+                                        <td class="border px-4 py-2">
+                                            <input type="text" class="rounded-md border-gray-300" value="9.0">
+                                        </td>
+                                    </tr>
+                                    <!-- Add more students as needed -->
+                                </tbody>
+                            </table>
+                            <div class="flex justify-end mt-4">
+                                <button class="rounded-box bg-green-500 text-white py-1 px-3 mr-2">Guardar</button>
+                                <button class="rounded-box bg-red-500 text-white py-1 px-3">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        menuToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+    </script>
+</body>
+</html>

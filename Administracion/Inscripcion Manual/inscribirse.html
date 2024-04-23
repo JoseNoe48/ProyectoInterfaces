@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IECI Administración</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .rounded-box {
+            border-radius: 9999px;
+        }
+        .group-box {
+            border: 2px solid #e5e7eb; /* Tailwind's gray-300 */
+            border-radius: 0.5rem; /* Tailwind's rounded-md */
+            background-color: #f3f4f6; /* Tailwind's gray-100 */
+        }
+        .hover\:bg-navy:hover {
+            background-color: #000080; /* Navy color */
+        }
+        .nav-button {
+            padding: 2px 16px;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem; /* Tailwind's text-sm */
+            font-weight: normal;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+        .nav-button.active {
+            background-color: #000080; /* Navy color */
+        }
+        .rounded-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background-color: #ccc; /* Default color */
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .rounded-btn:hover {
+            background-color: #ffd700; /* Gold color on hover */
+        }
+    </style>
+</head>
+<body class="bg-gray-200">
+    <div class="flex flex-col h-screen">
+        <!-- Top Bar -->
+        <div class="flex items-center justify-between bg-yellow-600 p-2 text-white">
+            <h1 class="text-lg font-semibold">IECI</h1>
+            <button id="menu-toggle" class="text-gray-600">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+        </div>
+
+        <!-- Main Content -->
+<!-- Contenido de Area -->
+<div class="flex-1 p-5">
+    <div class="bg-white rounded-lg p-5">
+        <h2 class="text-lg font-semibold mb-5">Formulario de Inscripción de Alumno</h2>
+        <form>
+            <div class="mb-4">
+                <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+                <input type="text" id="nombre" name="nombre" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+            </div>
+            <div class="mb-4">
+                <label for="apellidos" class="block text-sm font-medium text-gray-700">Apellidos</label>
+                <input type="text" id="apellidos" name="apellidos" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+            </div>
+            <div class="mb-4">
+                <label for="fecha_nacimiento" class="block text-sm font-medium text-gray-700">Fecha de Nacimiento</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+            </div>
+            <div class="mb-4">
+                <label for="nombre_tutor" class="block text-sm font-medium text-gray-700">Nombre del Tutor</label>
+                <input type="text" id="nombre_tutor" name="nombre_tutor" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+            </div>
+            <div class="text-right">
+                <button type="submit" class="rounded-btn bg-gray-800 text-white py-2 px-4 hover:bg-gray-700">Inscribir Alumno</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+            </div>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        menuToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+    </script>
+</body>
+</html>

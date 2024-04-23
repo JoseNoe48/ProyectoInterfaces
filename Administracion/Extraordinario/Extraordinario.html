@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IECI Administración</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .rounded-box {
+            border-radius: 9999px;
+        }
+        .group-box {
+            border: 2px solid #e5e7eb; /* Tailwind's gray-300 */
+            border-radius: 0.5rem; /* Tailwind's rounded-md */
+            background-color: #f3f4f6; /* Tailwind's gray-100 */
+        }
+        .hover\:bg-navy:hover {
+            background-color: #000080; /* Navy color */
+        }
+        .nav-button {
+            padding: 2px 16px;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem; /* Tailwind's text-sm */
+            font-weight: normal;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+        .nav-button.active {
+            background-color: #000080; /* Navy color */
+        }
+        .rounded-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background-color: #ccc; /* Default color */
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .rounded-btn:hover {
+            background-color: #ffd700; /* Gold color on hover */
+        }
+    </style>
+</head>
+<body class="bg-gray-200">
+    <div class="flex flex-col h-screen">
+        <!-- Top Bar -->
+        <div class="flex items-center justify-between bg-yellow-600 p-2 text-white">
+            <h1 class="text-lg font-semibold">IECI</h1>
+            <button id="menu-toggle" class="text-gray-600">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+            <a href="#" class="rounded-box bg-yellow-500 nav-button hover:bg-navy cursor-pointer"></a>
+            <a href="#" class="rounded-box bg-yellow-500 nav-button hover:bg-navy cursor-pointer"></a>
+            <a href="#" class="rounded-box bg-yellow-500 nav-button hover:bg-navy cursor-pointer"></a>
+            <a href="#" class="rounded-box bg-yellow-500 nav-button hover:bg-navy cursor-pointer"></a>
+            <a href="#" class="rounded-box bg-yellow-500 nav-button hover:bg-navy cursor-pointer"></a>
+            <a href="#" class="rounded-box bg-yellow-500 nav-button hover:bg-navy cursor-pointer"></a>
+            <a href="#" class="rounded-box bg-yellow-500 nav-button hover:bg-navy cursor-pointer"></a>
+            <a href="#" class="rounded-box bg-yellow-500 nav-button hover:bg-navy cursor-pointer"></a>
+            <a href="#" class="rounded-btn bg-gray-300 text-gray-800 py-1 px-3 hover:bg-yellow-500"><i class="fas fa-plus"></i></a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex flex-1 overflow-hidden">
+            <!-- Sidebar -->
+            <div id="sidebar" class="w-48 bg-gray-800 text-white flex flex-col justify-between transform translate-x-0 transition-transform duration-300">
+                <div class="p-3">
+                    <a href="/Administracion/Extraordinario/Extraordinario.html" class="rounded-box bg-yellow-500 nav-button hover:bg-navy cursor-pointer">Extraordinario</a>
+                    <a href="/Administracion/Alumnado/Alumnado.html" class="rounded-box bg-yellow-500 nav-button hover:bg-navy cursor-pointer">Alumnado</a>
+                    <a href="/Administracion/Maestros/Maestros.html" class="rounded-box bg-yellow-500 nav-button hover:bg-navy cursor-pointer">Maestros</a>
+                    <a href="/Administracion/Summer-camp/#" class="rounded-box bg-yellow-500 nav-button hover:bg-navy cursor-pointer">SUMMER-CAMP</a>
+                    <a href="/Administracion/Inscripcion Manual/Inscripcion.html" class="rounded-box bg-yellow-500 nav-button hover:bg-navy cursor-pointer">Inscripcion Manual</a>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+<div class="flex-1 p-5">
+    <div class="bg-white rounded-lg p-5">
+        <h2 class="text-lg font-semibold mb-5">Lista de Alumnos para Examen Extraordinario</h2>
+        <ul>
+            <li class="flex justify-between items-center">
+                <span class="font-semibold">Juan Pérez:</span> 
+                <span class="text-red-600">Calificación: 5.2 - Estado: Reprobado</span>
+                <button class="rounded-btn bg-red-600 text-white py-2 px-4 hover:bg-red-700">Hacer Examen Extraordinario</button>
+            </li>
+            <li class="flex justify-between items-center">
+                <span class="font-semibold">María López:</span> 
+                <span class="text-green-600">Calificación: 6.8 - Estado: Aprobado</span>
+                <button class="rounded-btn bg-green-600 text-white py-2 px-4 hover:bg-green-700">Hacer Examen Extraordinario</button>
+            </li>
+            <li class="flex justify-between items-center">
+                <span class="font-semibold">Carlos García:</span> 
+                <span class="text-red-600">Calificación: 4.9 - Estado: Reprobado</span>
+                <button class="rounded-btn bg-red-600 text-white py-2 px-4 hover:bg-red-700">Hacer Examen Extraordinario</button>
+            </li>
+            <li class="flex justify-between items-center">
+                <span class="font-semibold">Ana Martínez:</span> 
+                <span class="text-green-600">Calificación: 7.5 - Estado: Aprobado</span>
+                <button class="rounded-btn bg-green-600 text-white py-2 px-4 hover:bg-green-700">Hacer Examen Extraordinario</button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        menuToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+    </script>
+</body>
+</html>

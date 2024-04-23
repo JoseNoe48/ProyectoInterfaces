@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic History</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .active {
+            background-color: #ffd700;
+        }
+        .submenu {
+            display: none;
+        }
+        .submenu a {
+            padding-left: 2rem;
+        }
+        .submenu a:hover {
+            background-color: #fbbf24;
+        }
+        .submenu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .submenu li {
+            padding: 0.5rem 0;
+        }
+        #sidebar {
+            transition: margin-left 0.3s;
+            width: 14rem; /* Reduced width from 16rem to 14rem */
+        }
+        #sidebar.closed {
+            margin-left: -14rem; /* Adjusted to new width */
+        }
+        #content {
+            transition: margin-left 0.3s;
+        }
+        #content.expanded {
+            margin-left: 0;
+        }
+        #headerLogo {
+            color: #1e40af; /* Tailwind color blue-700 */
+            transition: color 0.3s;
+        }
+        #content:not(.expanded) #headerLogo {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-gray-200">
+    <div class="min-h-screen flex flex-row">
+        <!-- Sidebar -->
+        <div id="sidebar" class="bg-blue-800 text-white flex flex-col fixed h-full">
+            <!-- Logo -->
+            <div class="flex items-center justify-center h-20 border-b border-blue-900">
+                <i class="fas fa-user-circle fa-2x"></i>
+                <span class="text-xl font-bold ml-2">IECI</span>
+            </div>
+            <!-- Navigation -->
+            <div class="flex flex-col py-4">
+                <a href="#" class="py-2 px-4 hover:bg-blue-700" onclick="toggleSubmenu(event, 'historialSubmenu')">HISTORIAL</a>
+                <div id="historialSubmenu" class="submenu">
+                    <ul>
+                        <li><a href="/Alumno/Historial/Completo.html" class="py-2 px-4 hover:bg-blue-700">Completo</a></li>
+                        <li><a href="/Alumno/Historial/Basico.html" class="py-2 px-4 hover:bg-blue-700">Basico</a></li>
+                        <li><a href="/Alumno/Historial/Encurso.html" class="py-2 px-4 hover:bg-blue-700">En Curso</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="py-2 px-4 hover:bg-blue-700" onclick="toggleSubmenu(event, 'reinscriptionSubmenu')">REINSCRIPCION</a>
+                <div id="reinscriptionSubmenu" class="submenu">
+                    <ul>
+                        <li><a href="/Alumno/Reinscripcion/Enlinea.html" class="py-2 px-4 hover:bg-blue-700">En Linea</a></li>
+                        <li><a href="/Alumno/Reinscripcion/Recibo.html" class="py-2 px-4 hover:bg-blue-700">Recibo Oficial</a></li>
+                        <li><a href="/Alumno/Reinscripcion/Procedimiento.html" class="py-2 px-4 hover:bg-blue-700">Procedimiento</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="py-2 px-4 hover:bg-blue-700" onclick="toggleSubmenu(event, 'extraordinarySubmenu')">EXTRAORDINARIO</a>
+                <div id="extraordinarySubmenu" class="submenu">
+                    <ul>
+                        <li><a href="/Alumno/Extraordinarios/Procedimiento.html" class="py-2 px-4 hover:bg-blue-700">Procedimiento</a></li>
+                        <li><a href="/Alumno/Extraordinarios/Fechas.html" class="py-2 px-4 hover:bg-blue-700">Fechas</a></li>
+                        <li><a href="/Alumno/Extraordinarios/Pago.html" class="py-2 px-4 hover:bg-blue-700">Pagos</a></li>
+                        <li><a href="/Alumno/Extraordinarios/Resultados.html" class="py-2 px-4 hover:bg-blue-700">Resultados</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="py-2 px-4 hover:bg-blue-700" onclick="toggleSubmenu(event, 'dropsSubmenu')">BAJAS</a>
+                <div id="dropsSubmenu" class="submenu">
+                    <ul>
+                        <li><a href="Procedimiento.html" class="py-2 px-4 hover:bg-blue-700">Procedimiento</a></li>
+                        <li><a href="Temporal.html" class="py-2 px-4 hover:bg-blue-700">Temporal</a></li>
+                        <li><a href="Parcial.html" class="py-2 px-4 hover:bg-blue-700">Parcial</a></li>
+                        <li><a href="Semestral.html" class="py-2 px-4 hover:bg-blue-700">Semestral</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="py-2 px-4 hover:bg-blue-700" onclick="toggleSubmenu(event, 'summerCampSubmenu')">SUMMER-CAMP</a>
+                <div id="summerCampSubmenu" class="submenu">
+                    <ul>
+                        <li><a href="#" class="py-2 px-4 hover:bg-blue-700">OPCIÓN 1</a></li>
+                        <li><a href="#" class="py-2 px-4 hover:bg-blue-700">OPCIÓN 2</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Footer -->
+            <div class="mt-auto flex items-center justify-center h-16 border-t border-blue-900">
+                <i class="fas fa-power-off fa-2x"></i>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div id="content" class="flex-1 flex flex-col ml-56"> <!-- Adjusted margin-left to match new sidebar width -->
+            <!-- Header -->
+            <div class="bg-white shadow px-4 py-2 flex justify-between items-center">
+                <div class="flex items-center">
+                    <button id="menuToggle" class="text-gray-800 focus:outline-none mr-4">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                    <span id="headerLogo" class="text-xl font-bold">IECI</span>
+                </div>
+                <div class="flex">
+                    <i class="fas fa-print fa-lg mx-2"></i>
+                    <i class="fas fa-download fa-lg mx-2"></i>
+                    <i class="fas fa-cog fa-lg mx-2"></i>
+                </div>
+            </div>
+    <!-- Content -->
+    <div class="flex-1 overflow-auto p-4">
+        <!-- Tabla de Bajas -->
+        <div class="bg-white shadow rounded-lg p-4 mb-6">
+            <h2 class="text-lg font-semibold mb-4">Darse de Baja de Materias</h2>
+            <div class="overflow-auto">
+                <table class="min-w-full text-sm">
+                    <thead>
+                        <tr class="bg-blue-100 text-left">
+                            <th class="px-4 py-2 font-semibold">Código</th>
+                            <th class="px-4 py-2 font-semibold">Materia</th>
+                            <th class="px-4 py-2 font-semibold">Maestro</th>
+                            <th class="px-4 py-2 font-semibold">Semestre</th>
+                            <th class="px-4 py-2 font-semibold">Grupo</th>
+                            <th class="px-4 py-2 font-semibold">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border px-4 py-2">001</td>
+                            <td class="border px-4 py-2">Matemáticas</td>
+                            <td class="border px-4 py-2">Juan Pérez</td>
+                            <td class="border px-4 py-2">2</td>
+                            <td class="border px-4 py-2">A</td>
+                            <td class="border px-4 py-2"><button class="rounded-btn bg-red-500 text-white py-1 px-3 hover:bg-red-700">Darse de Baja</button></td>
+                        </tr>
+                        <tr class="bg-blue-50">
+                            <td class="border px-4 py-2">002</td>
+                            <td class="border px-4 py-2">Historia</td>
+                            <td class="border px-4 py-2">María Gómez</td>
+                            <td class="border px-4 py-2">3</td>
+                            <td class="border px-4 py-2">B</td>
+                            <td class="border px-4 py-2"><button class="rounded-btn bg-red-500 text-white py-1 px-3 hover:bg-red-700">Darse de Baja</button></td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">003</td>
+                            <td class="border px-4 py-2">Ciencias</td>
+                            <td class="border px-4 py-2">Carlos López</td>
+                            <td class="border px-4 py-2">4</td>
+                            <td class="border px-4 py-2">C</td>
+                            <td class="border px-4 py-2"><button class="rounded-btn bg-red-500 text-white py-1 px-3 hover:bg-red-700">Darse de Baja</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code to handle submenu toggle and sidebar toggle
+        function toggleSubmenu(event, submenuId) {
+            event.preventDefault();
+            const submenu = document.getElementById(submenuId);
+            submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Convert submenu links into list items
+        const submenus = document.querySelectorAll('.submenu');
+        submenus.forEach(submenu => {
+            const links = submenu.querySelectorAll('a');
+            const list = document.createElement('ul');
+            list.classList.add('submenu-list');
+            links.forEach(link => {
+                const listItem = document.createElement('li');
+                listItem.appendChild(link.cloneNode(true));
+                list.appendChild(listItem);
+            });
+            submenu.appendChild(list);
+            submenu.removeChild(submenu.querySelector('a')); // Remove original links
+        });
+
+        const menuToggle = document.querySelector('#menuToggle');
+        const sidebar = document.querySelector('#sidebar');
+        const content = document.querySelector('#content');
+        const headerLogo = document.querySelector('#headerLogo');
+
+        menuToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('closed');
+            content.classList.toggle('expanded');
+            headerLogo.classList.toggle('text-blue-700');
+            headerLogo.classList.toggle('text-white');
+        });
+    </script>
+</body>
+</html>
+
